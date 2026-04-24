@@ -46,6 +46,9 @@ const LogingLanding = () => {
               </Link>
             ))}
           </div>
+          <div className="mt-12 text-center md:text-left text-sm text-slate-600">
+            <p>© {new Date().getFullYear()} SapumalTech. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </div>
