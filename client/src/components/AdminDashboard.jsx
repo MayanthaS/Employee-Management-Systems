@@ -56,7 +56,7 @@ const AdminDashboard = ({ data }) => {
                 {stats.value}
               </p>
             </div>
-            {/* <card.icon className="size-10 p-2 rounded-lg bg-cyan-200 text-slate-700 group-hover:bg-cyan-50 group-hover:text-cyan-600 transition-colors duration-200" /> */}
+            <stats.icon className="size-10 p-2 rounded-lg bg-cyan-200 text-slate-700 group-hover:bg-cyan-50 group-hover:text-cyan-600 transition-colors duration-200" />
           </div>
         ))}
       </div>
