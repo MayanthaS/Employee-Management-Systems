@@ -92,7 +92,7 @@ const Sidebar = () => {
         </p>
       </div>
       {/*Navigation lists */}
-      <div className="flex-1 px-4 space-y-2 overflow-y-auto">
+      <div className="flex-1 px-4 py-2 space-y-2.5 overflow-y-auto">
         {navItems.map((item) => {
           const isActive = currentPath.startsWith(item.href);
           return (
@@ -104,9 +104,21 @@ const Sidebar = () => {
               {isActive && (
                 <div className="absolute left-0 top-1/2 h-5 w-[3px] -translate-y-1/2 rounded-r-full bg-cyan-400" />
               )}
-              <item.icon
-                className={`h-[17px] w-[17px] shrink-0 ${isActive ? "text-cyan-200" : "text-slate-400 group-hover:text-cyan-100"}`}
-              />
+              <div
+                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-colors ${
+                  isActive
+                    ? "border-cyan-400/20 bg-cyan-400/10"
+                    : "border-white/5 bg-white/5 group-hover:border-cyan-400/20 group-hover:bg-cyan-400/10"
+                }`}
+              >
+                <item.icon
+                  className={`h-4 w-4 shrink-0 ${
+                    isActive
+                      ? "text-cyan-200"
+                      : "text-slate-400 group-hover:text-cyan-100"
+                  }`}
+                />
+              </div>
               <span className="flex-1">{item.name}</span>
               {isActive && (
                 <ChevronRightIcon className="h-4 w-4 text-cyan-100" />
