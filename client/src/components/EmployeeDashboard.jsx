@@ -1,5 +1,11 @@
-import { Calendar1Icon, DollarSignIcon, FileTextIcon } from "lucide-react";
+import {
+  ArrowBigRightIcon,
+  Calendar1Icon,
+  DollarSignIcon,
+  FileTextIcon,
+} from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const EmployeeDashboard = ({ data }) => {
   const emp = data.employee;
@@ -51,7 +57,18 @@ const EmployeeDashboard = ({ data }) => {
           </div>
         ))}
       </div>
-      <div>Link</div>
+      <div className="flex flex-col sm:flex-row gap-3">
+        <Link
+          to="/attendence"
+          className="btn-primary text-center inline-flex items-center justify-center gap-2"
+        >
+          Mark Attendence
+          <ArrowBigRightIcon className="w-4 h-4" />
+        </Link>
+        <Link to="/leave" className="btn-secondary text-center  space-x-2">
+          Apply for Leave
+        </Link>
+      </div>
     </div>
   );
 };
