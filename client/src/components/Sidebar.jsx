@@ -20,7 +20,7 @@ const Sidebar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const userName = `${dummyProfileData.firstName} ${dummyProfileData.lastName}`;
 
-  const role = "ADMIN" || "EMPLOYEE";
+  const role = "" || "EMPLOYEE";
 
   const navItems = [
     { name: "Dashboard", href: "/dashboard", icon: LayoutGridIcon },

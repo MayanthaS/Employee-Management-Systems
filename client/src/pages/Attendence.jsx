@@ -1,3 +1,11 @@
+import React, { useState, useEffect, useCallback } from "react";
+import { dummyAttendanceData } from "../assets/assets";
+import Loading from "../components/Loading";
+import { Check } from "lucide-react";
+import CheckingButton from "../components/atttendence/CheckingButton";
+import AttendenceStats from "../components/atttendence/AttendenceStats";
+import AttendenceHistory from "../components/atttendence/AttendenceHistory";
+
 const Attendence = () => {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -29,19 +37,21 @@ const Attendence = () => {
             Track your work hours and daily check-ins
           </p>
         </div>
-        {isDeleted ? (
-          <div className="mb-8 pb-6 bg-rose-300 rounded-2xl text-center">
-            <p className="text-rose-800">
-              You can longer clock in or out because your emmployee records have
-              been marked as deleted
-            </p>
-          </div>
-        ) : (
-          <div className="mb-8">
-            <button className=""> cheking button</button>
-          </div>
-        )}
       </div>
+      {isDeleted ? (
+        <div className="mb-8 pb-6 bg-rose-300 rounded-2xl text-center">
+          <p className="text-rose-800">
+            You can longer clock in or out because your emmployee records have
+            been marked as deleted
+          </p>
+        </div>
+      ) : (
+        <div className="mb-8">
+          <CheckingButton todayRecord={todayRecord} onAction={fetchData} />
+        </div>
+      )}
+      <AttendenceStats history={history} />
+      <AttendenceHistory history={history} />
     </div>
   );
 };

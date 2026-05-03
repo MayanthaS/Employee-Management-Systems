@@ -89,8 +89,8 @@ const Employees = () => {
               employmentStatus: "INACTIVE",
               updatedAt: new Date().toISOString(),
             }
-          : employee
-      )
+          : employee,
+      ),
     );
   };
 
