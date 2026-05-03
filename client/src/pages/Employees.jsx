@@ -14,8 +14,12 @@ const Employees = () => {
 
   const fetchEmployees = useCallback(async () => {
     setLoading(true);
-    setEmployees(dummyEmployeeData);
-  }, []);
+    setEmployees(
+      dummyEmployeeData.filter((emp) =>
+        selectedDept ? emp.department === selectedDept : true,
+      ),
+    );
+  }, [selectedDept]);
 
   useEffect(() => {
     fetchEmployees();
@@ -69,8 +73,8 @@ const Employees = () => {
               ...employeeData,
               updatedAt: new Date().toISOString(),
             }
-          : employee
-      )
+          : employee,
+      ),
     );
     setEditEmployee(null);
   };
