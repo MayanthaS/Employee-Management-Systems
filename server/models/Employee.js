@@ -1,4 +1,5 @@
 import mongoose, { mongo } from "mongoose";
+import { DEPARTMENTS } from "../constants/departments.js";
 
 const EmployeeSchema = new mongoose.Schema({
  userId:{
@@ -61,7 +62,12 @@ const EmployeeSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
-  
+  department: {
+    type: String,
+    enum: DEPARTMENTS,
+    required: true,
+  },
+
 },{timestamps: true});
 
 const Employee = mongoose.model.Employee || mongoose.model("Employee", EmployeeSchema);
