@@ -4,8 +4,9 @@ import dotenv from "dotenv";
 import multer from "multer";
 // import { connectDB } from "./config/db";
 import { connectDB } from "./config/db.js";
-// import authRoutes from "./routes/authRoutes.js";
-// import employeeRoutes from "./routes/employeeRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import employeeRouter from "./routes/employeeRoutes.js";
+import profileRouter from "./routes/profileRoutes.js";
 
 
 dotenv.config();
@@ -24,6 +25,12 @@ app.use(multer().none());
 app.get("/", (req, res) => {
   res.send("Welcome to the Employee Management System API");
 });
+app.use("/api/auth", authRoutes);
+app.use("/api/employees",employeeRouter)
+app.use("/api/profile",profileRouter)
+
+
+
  await connectDB();
 // Start the server
 app.listen(PORT, () => {
