@@ -1,4 +1,4 @@
-import Attendance from "../models/Attendence";
+import Attendance from "../models/Attendence.js";
 import Employee from "../models/Employee.js"
 
 
