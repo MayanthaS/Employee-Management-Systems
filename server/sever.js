@@ -7,6 +7,7 @@ import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import employeeRouter from "./routes/employeeRoutes.js";
 import profileRouter from "./routes/profileRoutes.js";
+import attedanceRouter from "./routes/attendanceRoutes.js";
 
 
 dotenv.config();
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/employees",employeeRouter)
 app.use("/api/profile",profileRouter)
+app.use("/api/attendance",attedanceRouter)
 
 
 
