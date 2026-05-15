@@ -10,6 +10,7 @@ import profileRouter from "./routes/profileRoutes.js";
 import attedanceRouter from "./routes/attendanceRoutes.js";
 import leaveRouter from "./routes/leaveRoutes.js";
 import payslipRouter from "./routes/payslipsRotes.js";
+import dashboardRouter from "./routes/dashboardRoutes.js";
 
 
 dotenv.config();
@@ -34,6 +35,7 @@ app.use("/api/profile",profileRouter)
 app.use("/api/attendance",attedanceRouter)
 app.use("/api/leave",leaveRouter)
 app.use("/api/payslips",payslipRouter)
+app.use("/api/dashboard",dashboardRouter)
 
 
 
