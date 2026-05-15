@@ -8,6 +8,8 @@ import authRoutes from "./routes/authRoutes.js";
 import employeeRouter from "./routes/employeeRoutes.js";
 import profileRouter from "./routes/profileRoutes.js";
 import attedanceRouter from "./routes/attendanceRoutes.js";
+import leaveRouter from "./routes/leaveRoutes.js";
+import payslipRouter from "./routes/payslipsRotes.js";
 
 
 dotenv.config();
@@ -30,6 +32,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/employees",employeeRouter)
 app.use("/api/profile",profileRouter)
 app.use("/api/attendance",attedanceRouter)
+app.use("/api/leave",leaveRouter)
+app.use("/api/payslips",payslipRouter)
 
 
 
